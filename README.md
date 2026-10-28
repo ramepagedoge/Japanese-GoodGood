@@ -52,17 +52,25 @@ npm run dev
 
 ---
 
-## 🌐 免費發布至公開網址 (手機隨時隨地連線)
+## 🌐 免費發布至 GitHub Pages (推薦)
 
-推薦免費部署到 **Vercel** 或 **Cloudflare Pages**：
+本專案已內建 GitHub Actions 自動部署腳本（`.github/workflows/deploy.yml`）與相對路徑支援（`base: './'`），每次推送程式碼至 GitHub 時都會自動構建並發布。
 
-### 方案 A：使用 Vercel (推薦)
-1. 將專案推上你的 GitHub 倉庫。
-2. 登入 [Vercel](https://vercel.com)，點擊「Add New Project」並匯入該倉庫。
-3. Framework Preset 選擇 `Vite`，Root Directory 選擇 `projects/japanese-learning-app`。
-4. 點擊「Deploy」，約 30 秒即可取得專屬 HTTPS 網址（例如 `https://your-nihongo.vercel.app`）！
+### 操作步驟：
+1. 在 [GitHub 官網](https://github.com/new) 建立一個新的公開倉庫（Repository，例如命名為 `nihongo-flow`）。
+2. 在電腦終端機專案目錄執行：
+   ```bash
+   git remote add origin https://github.com/<你的GitHub帳號>/nihongo-flow.git
+   git push -u origin main
+   ```
+3. 前往 GitHub 倉庫頁面 ➔ 點擊 **Settings** ➔ 左側選單選擇 **Pages**。
+4. 在 **Build and deployment** 下方的 **Source**，選單切換為 **`GitHub Actions`**。
+5. 等待約 1 分鐘，GitHub Actions 執行完畢後，即可獲得免費的專屬 HTTPS 網址：
+   `https://<你的GitHub帳號>.github.io/nihongo-flow/`
 
-### 方案 B：直接將網頁加入手機主畫面 (PWA 體驗)
+---
+
+## 📱 手機端沉浸式 PWA 體驗
 用手機 Safari (iOS) 或 Chrome (Android) 開啟網址後：
 - **iPhone / iPad**：點擊分享按鈕 ➔ 選擇「加入主畫面」。
 - **Android**：點擊右上角選單 ➔ 選擇「安裝應用程式」或「加到主螢幕」。
